@@ -1,9 +1,17 @@
 import {GET_MOVIE} from '../types'
 
-export default (state, action)=> {
-
-
+ const  AppReducer = (state, action)=> {
 switch (action.type) {
+    case GET_MOVIE:{
+        return {
+            
+            ...state,
+            Poster:action.payload.Poster,
+    Name: action.payload.Name,
+    Year: action.payload.Year,
+    Nomination: action.payload.Nomination,
+        }
+    }
   
 }
 
@@ -21,9 +29,8 @@ switch (action.type) {
 
 
 
-
-
-
 }
 
+
+export default AppReducer
 
