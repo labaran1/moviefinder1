@@ -21,7 +21,7 @@ export default function Home() {
             {/* Search Component */}
             <Search/>
             
-           {(Year&& Name && Poster)  !=(null || undefined || "") ?<Card/>: null }
+           {(Year&& Name && Poster)  !==(null || undefined || "") ?<Card/>: null }
         </div>
     )
 }
