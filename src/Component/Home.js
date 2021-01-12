@@ -23,5 +23,5 @@ export default function Home() {
             
            {(Year&& Name && Poster)  !==(null || undefined || "") ?<Card/>: null }
         </div>
-    )
+    )   
 }
