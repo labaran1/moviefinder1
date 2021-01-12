@@ -4,7 +4,7 @@ import './Card.css'
 
 export default function Card() {
     const appContext = useContext(AppContext)
-    const { Year , Name, Poster, Nomination} = appContext;
+    const { Year , Name, Poster} = appContext;
     return (
         // <center></center>
         <div className="card">

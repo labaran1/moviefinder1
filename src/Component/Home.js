@@ -6,7 +6,7 @@ import AppContext from '../context/appContext/AppContext'
 
 export default function Home() {
     const appContext = useContext(AppContext)
-    const { Year , Name, Poster, Nomination} = appContext;
+    const { Year , Name, Poster} = appContext;
 
     
     return (
@@ -21,7 +21,7 @@ export default function Home() {
             {/* Search Component */}
             <Search/>
             
-           {Year&& Name && Poster  !=null || undefined || "" ?<Card/>: null }
+           {(Year&& Name && Poster)  !=(null || undefined || "") ?<Card/>: null }
         </div>
     )
 }
