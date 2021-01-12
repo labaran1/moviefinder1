@@ -20,7 +20,7 @@ const [state, dispatch] = useReducer(AppReducer, initialState)
 
 
     const searchResult = async word => {
-        let urll = `http://www.omdbapi.com/?t=${word}&apikey=5173ce93`
+        let urll = `https://www.omdbapi.com/?t=${word}&apikey=5173ce93`
     
         const res = await axios.get(
 
