@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #8e00a3;
+  color: #fff;
+}
+
+.Head {
+  margin-top: 10rem;
+}
+
+.Head h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 10px;
+}
+.Head h5 {
+  font-style: italic;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   ====== Search Box ====== 
+   =========================== */
+
+.search {
+  border: 2px solid #fff;
+  /* cf5c3f */
+  overflow: auto;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.search input[type="text"] {
+  border: 0px;
+  width: 67%;
+  padding: 10px 10px;
+  color: #fff;
+}
+
+.search input[type="text"]:focus {
+  outline: 0;
+}
+
+.search input[type="submit"] {
+  border: 0px;
+  background: none;
+  background-color: #8e00e3;
+  color: #fff;
+  float: right;
+  padding: 10px;
+  border-radius-top-right: 5px;
+  -moz-border-radius-top-right: 5px;
+  -webkit-border-radius-top-right: 5px;
+  border-radius-bottom-right: 5px;
+  -moz-border-radius-bottom-right: 5px;
+  -webkit-border-radius-bottom-right: 5px;
+  cursor: pointer;
+}
+
+.search input::placeholder {
+  color: #fff;
+}
+
+/* ===========================
+      ====== Medua Query for Search Box ====== 
+      =========================== */
+
+@media only screen and (min-width: 150px) and (max-width: 780px) {
+  .search {
+    width: 85%;
+    margin: 0 auto;
+  }
+}

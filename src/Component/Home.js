@@ -1,28 +1,27 @@
-import React, { useContext } from 'react'
-import axios from 'axios'
+import React, {useContext} from 'react'
+import Search from './Search'
+import Card from './Card'
 import AppContext from '../context/appContext/AppContext'
 
 
 export default function Home() {
     const appContext = useContext(AppContext)
-let key = `5173ce93`
-let urll = `http://www.omdbapi.com/?t=hello&apikey=5173ce93`
-// res.data.title 
-// res.data.Year
-// res.data.Awards
-// res.data.Poster
-    const geti = ()=>{
-        axios.get(urll).then( (res)=> {
-            console.log(res.data.Poster);
+    const { Year , Name, Poster, Nomination} = appContext;
 
-
-        })
-    }
+    
     return (
-        <div onClick={geti}>
+        <div>
+            <center className="Head">
+                <div>
+                    <h1> Movie Finder</h1>
+                    <h5>Try below !</h5>
+                </div>
+            </center>
+
             {/* Search Component */}
-            {/* {Searh Result } */}
-            {appContext.Year}
+            <Search/>
+            
+           {Year&& Name && Poster  !=null || undefined || "" ?<Card/>: null }
         </div>
     )
 }
