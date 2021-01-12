@@ -7,15 +7,36 @@ import {GET_MOVIE} from  '../types'
 
 const AppState = props => {
 const initialState = {
-    Poster: null,
-    Name: null,
-    Year: 2016,
-    Nomination: null,
+    Poster: "",
+    Name: "",
+    Year: "",
+    Nomination: "",
 }
 
 const [state, dispatch] = useReducer(AppReducer, initialState)
 
 
+
+
+
+    const searchResult = async word => {
+        let urll = `http://www.omdbapi.com/?t=${word}&apikey=5173ce93`
+    
+        const res = await axios.get(
+
+urll            );
+    
+        dispatch({
+          type: GET_MOVIE,
+               payload:{
+                Poster: res.data.Poster,
+                Name:res.data.Title,
+                Year:res.data.Year,
+                Nomination:res.data.Awards,
+
+            }
+        });
+      };
 
 return (
     <AppContext.Provider value={{
@@ -23,6 +44,8 @@ return (
  Name: state.Name,
  Year: state.Year,
  Nomination: state.Nomination,
+  searchResult,
+//  SearchValue: state.SearchValue,
 
     }}>
 
