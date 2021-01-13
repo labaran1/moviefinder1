@@ -11,6 +11,7 @@ export default function Search() {
     
         // alert(searchValue)
         // console.log(appContext.Year);
+        appContext.updateLoad(true)
         appContext.searchResult(searchValue)
     // console.log(appContext.Year);
 

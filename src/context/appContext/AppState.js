@@ -2,7 +2,7 @@ import React, {useReducer} from 'react'
 import axios from 'axios'
 import AppContext from './AppContext'
 import AppReducer from './AppReducer'
-import {GET_MOVIE} from  '../types'
+import {GET_MOVIE , UPDATE_lOADING} from  '../types'
 
 
 const AppState = props => {
@@ -11,6 +11,7 @@ const initialState = {
     Name: "",
     Year: "",
     Nomination: "",
+    Loading: false,
 }
 
 const [state, dispatch] = useReducer(AppReducer, initialState)
@@ -36,15 +37,28 @@ urll            );
 
             }
         });
+        updateLoad(false)
       };
 
+      const updateLoad = (value) =>{
+
+        dispatch({
+            type:UPDATE_lOADING,
+            payload:{
+                Loading:value
+            }
+    
+        })
+    }
 return (
     <AppContext.Provider value={{
  Poster: state.Poster,
  Name: state.Name,
  Year: state.Year,
  Nomination: state.Nomination,
+ Loading:state.Loading,
   searchResult,
+  updateLoad,
 //  SearchValue: state.SearchValue,
 
     }}>

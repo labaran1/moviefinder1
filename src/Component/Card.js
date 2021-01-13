@@ -12,7 +12,7 @@ export default function Card() {
             <h2 style={{background:"#1d0f22"}}>{Name}</h2>
             <h4 style={{background:"#1d0f22", color: "#ccc"}}>{Year}</h4>
         
-         <div style={{background:"#1d0f22", color:"red" , display: "flex", justifyContent:"space-between"}}>
+         <span style={{background:"#1d0f22", color:"red" , display: "flex", justifyContent:"space-between"}}>
              {/* {Nomination} */}
 <span  title="Nominate Movie"> <i class="fas fa-plus" style={{background:"#1d0f22", color: "red" , cursor:"pointer"}}></i>
 
@@ -21,7 +21,7 @@ export default function Card() {
 
 </span>
 
-         </div>
+         </span>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import {GET_MOVIE} from '../types'
+import {GET_MOVIE, UPDATE_lOADING} from '../types'
 
  const  AppReducer = (state, action)=> {
 switch (action.type) {
@@ -11,6 +11,14 @@ switch (action.type) {
     Year: action.payload.Year,
     Nomination: action.payload.Nomination,
         }
+    }
+    case UPDATE_lOADING:{
+        return {
+            ...state,
+            Loading: action.payload.Loading
+        }
+
+
     }
   
 }
