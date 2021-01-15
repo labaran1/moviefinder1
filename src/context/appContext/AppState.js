@@ -2,7 +2,7 @@ import React, {useReducer} from 'react'
 import axios from 'axios'
 import AppContext from './AppContext'
 import AppReducer from './AppReducer'
-import {GET_MOVIE , UPDATE_lOADING, UPDATE_ERROR} from  '../types'
+import {GET_MOVIE , UPDATE_lOADING, UPDATE_ERROR , UPDATE_FAVOURITE_COUNT} from  '../types'
 
 
 const AppState = props => {
@@ -16,6 +16,7 @@ const initialState = {
         status:false,
         message: "",
     },
+    favourite:0,
 }
 
 const [state, dispatch] = useReducer(AppReducer, initialState)
@@ -80,6 +81,13 @@ let res;
           }
       })
     }
+
+
+    const updateFav = ()=> {
+        dispatch({
+            type:UPDATE_FAVOURITE_COUNT
+        })
+    }
 return (
     <AppContext.Provider value={{
  Poster: state.Poster,
@@ -88,6 +96,9 @@ return (
  Nomination: state.Nomination,
  Loading:state.Loading,
  Err:state.Error,
+ fav:state.favourite,
+ updateFav,
+
   searchResult,
   updateLoad,
   updateError,
