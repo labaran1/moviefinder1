@@ -13,7 +13,6 @@ export default function Card() {
             <h4 style={{background:"#1d0f22", color: "#ccc"}}>{Year}</h4>
         
          <span style={{background:"#1d0f22", color:"red" , display: "flex", justifyContent:"space-between"}}>
-             {/* {Nomination} */}
 <span  title="Nominate Movie"> <i class="fas fa-plus" style={{background:"#1d0f22", color: "red" , cursor:"pointer"}}></i>
 
 </span>
