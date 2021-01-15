@@ -3,11 +3,12 @@ import Search from './Search'
 import Card from './Card'
 import AppContext from '../context/appContext/AppContext'
 import Load from '../Images/rings.svg'
+import Error from './Error'
 
 
 export default function Home() {
     const appContext = useContext(AppContext)
-    const { Year , Name, Poster,Loading} = appContext;
+    const { Year , Name, Poster,Loading , Err} = appContext;
 
     
     return (
@@ -22,7 +23,7 @@ export default function Home() {
             {/* Search Component */}
             <Search/>
             
-            {Loading? <center> <img src={Load} style={{width:"500px"}} /></center>: (Year&& Name && Poster)  !==(null || undefined || "") ?<Card/>:  <span>Invalid Respond</span>}
+            {Loading? <center> <img src={Load} style={{width:"500px"}} /></center>: (Year&& Name && Poster)  !==(null || undefined || "") ?<Card/>: (Err.status)? <Error/>:null}
            {/* {(Year&& Name && Poster)  !==(null || undefined || "") ?<Card/>:  null } */}
         </div>
     )   
