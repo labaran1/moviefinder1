@@ -1,4 +1,4 @@
-import {GET_MOVIE, UPDATE_lOADING} from '../types'
+import {GET_MOVIE, UPDATE_lOADING , UPDATE_ERROR} from '../types'
 
  const  AppReducer = (state, action)=> {
 switch (action.type) {
@@ -19,6 +19,23 @@ switch (action.type) {
         }
 
 
+    }
+    case UPDATE_ERROR:{
+        return {
+            ...state,
+           
+            Error:{
+                status:action.payload.Error.status,
+                message:action.payload.Error.message,
+            }
+        }
+    }
+
+
+    default:{
+return{
+    ...state,
+}
     }
   
 }
