@@ -1,4 +1,4 @@
-import {GET_MOVIE, UPDATE_lOADING , UPDATE_ERROR} from '../types'
+import {GET_MOVIE, UPDATE_lOADING , UPDATE_ERROR, UPDATE_FAVOURITE_COUNT} from '../types'
 
  const  AppReducer = (state, action)=> {
 switch (action.type) {
@@ -28,6 +28,12 @@ switch (action.type) {
                 status:action.payload.Error.status,
                 message:action.payload.Error.message,
             }
+        }
+    }
+    case UPDATE_FAVOURITE_COUNT:{
+        return{
+            ...state,
+            favourite: state.favourite +1,
         }
     }
 
