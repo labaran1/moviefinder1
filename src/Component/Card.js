@@ -4,7 +4,10 @@ import './Card.css'
 
 export default function Card() {
     const appContext = useContext(AppContext)
-    const { Year , Name, Poster , fav} = appContext;
+    const { Year , Name, Poster , fav , updateFav} = appContext;
+    const addFavourite = ()=> {
+        updateFav()
+    }
     return (
         // <center></center>
         <div className="card">
@@ -17,7 +20,7 @@ export default function Card() {
 
 </span> 
 
-<span  title={(fav>=5)? "Can't Add movie to favourite": "Add Movie to favourite"}> <i className={(fav>=5)? "fas fa-ban" :"far fa-heart"} style={{background:"#1d0f22", color: "red" , cursor:`${(fav>=5)? "disabled": "pointer"}`       }}></i>
+<span  onClick={addFavourite} title={(fav>=5)? "Can't Add movie to favourite": "Add Movie to favourite"}> <i className={(fav>=5)? "fas fa-ban" :"far fa-heart"} style={{background:"#1d0f22", color: "red" , cursor:`${(fav>=5)? "disabled": "pointer"}`       }}></i>
 
 </span>
 
